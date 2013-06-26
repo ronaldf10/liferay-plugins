@@ -5,8 +5,8 @@
 /*-------------------BASE STYLES-------------------*/
 
 $basecolor: #DDE1E3;
-$white: #FFF;
 $navcolor: #414445;
+$white: #FFF;
 
 body {
 	background: $basecolor;
@@ -23,7 +23,6 @@ a {
 	}
 }
 
-
 hr, .separator {
 	border-color: #BFBFBF transparent $white;
 	border-style: solid;
@@ -37,21 +36,11 @@ hr, .separator {
 	width: 980px;
 }
 
-
 #banner {
 	background: none;
 	height: auto;
 	margin-top: 1.4em;
 	position: relative;
-
-	.site-name {
-		@include border-radius(4px);
-		@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px $white);
-
-		.site-name {
-			@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px $white);
-		}
-	}
 }
 
 .site-title {
@@ -87,7 +76,6 @@ hr, .separator {
 	}
 }
 
-
 .organization-site {
 	.site-title .site-name {
 		background-image: url(../images/common/user_icon_white.png);
@@ -101,17 +89,15 @@ hr, .separator {
 }
 
 .private-page {
-	.site-title {
-		.site-name:after {
-			background-image: url(../images/common/key_small.png);
-			content: '';
-			display: block;
-			height: 10px;
-			left: 24px;
-			position: absolute;
-			top: 50%;
-			width: 10px;
-		}
+	.site-title .site-name:after {
+		background-image: url(../images/common/key_small.png);
+		content: '';
+		display: block;
+		height: 10px;
+		left: 24px;
+		position: absolute;
+		top: 50%;
+		width: 10px;
 	}
 }
 
@@ -129,8 +115,6 @@ hr, .separator {
 	right: 0;
 	top: -1.2em;
 }
-
-
 
 /*-------------------MAIN NAVIGATION-------------------*/
 
@@ -157,15 +141,34 @@ hr, .separator {
 	width: 990px;
 	z-index: 1;
 
-	h1 {
-		display:none;
+	a {
+		color: #CCC;
+		display: inline-block;
+		font-size: 1.1em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		margin: 0 1px;
+		margin-bottom: auto;
+		margin-top: auto;
+		padding: 3px 15px;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $white;
+			outline: 0;
+			text-shadow: -1px -1px #000;
+		}
+
+		&:focus {
+			color: $white;
+			outline: 0;
+			text-shadow: -1px -1px #000;
+		}
 	}
 
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 3px;
-		padding-top:6px;
+	h1 {
+		display:none;
 	}
 
 	li {
@@ -192,30 +195,11 @@ hr, .separator {
 		}
 	}
 
-	a {
-		color: #CCC;
-		display: inline-block;
-		font-size: 1.1em;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-weight: bold;
-		margin: 0 1px;
-		margin-bottom: auto;
-		margin-top: auto;
-		padding: 3px 15px;
-		text-decoration: none;
-		text-transform: uppercase;
-
-		&:hover {
-			color: $white;
-			outline: 0;
-			text-shadow: -1px -1px #000;
-		}
-
-		&:focus {
-			color: $white;
-			outline: 0;
-			text-shadow: -1px -1px #000;
-		}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 3px;
+		padding-top:6px;
 	}
 
 	.selected {
@@ -305,17 +289,16 @@ hr, .separator {
 
 		ul {
 			padding: 2px;
-		}
 
-		ul.child-menu-visible {
-			left: 0;
-			top: 25px;
+			&.child-menu-visible {
+				left: 0;
+				top: 25px;
+			}
 		}
 	}
 }
 
 .ie6 {
-
 	#banner {
 		height: 1%;
 
@@ -338,34 +321,33 @@ hr, .separator {
 			z-index: 200;
 		}
 
-		ul.child-menu-visible {
-			left: 0;
-			top: 25px;
-		}
-
 		li.hover {
 			.child-menu {
 				left: 0;
 				top: 25px;
 			}
 		}
+
+		ul.child-menu-visible {
+			left: 0;
+			top: 25px;
+		}
+	}
+
+	#wrapper {
+		width: 90%;
 	}
 
 	.portlet-topper {
 		zoom: 1;
 	}
 
-	#wrapper {
-		width: 90%;
-	}
 }
-
 
 /*-------------------PORTLET WRAPPER AND ICONS-------------------*/
 
 .portlet {
 	background-color: none;
-	border: 1px solid $navcolor; /*------REMOVE FOR FINAL------*/
 	margin: 0 0 10px;
 	padding: 3px;
 	text-align: left;
@@ -432,10 +414,20 @@ hr, .separator {
 		padding-bottom: 5px;
 	}
 }
+
 /*-------------------FOOTER-------------------*/
 
 #footer {
 	text-align: left;
+}
+
+.powered-by {
+	border-top: dashed 1px #656565;
+	color: #949494;
+	margin-top: auto;
+	padding-bottom: 10px;
+	padding-top: 2px;
+	position: relative;
 }
 
 /*-------------------SITE BREADCRUMBS-------------------*/
@@ -523,7 +515,7 @@ hr, .separator {
 	}
 }
 
-/*-------------------COLUMN STRUCTURE-------------------*/
+/*-------------------COLUMN AND LAYOUT STRUCTURE-------------------*/
 
 .aui-w33 {
 	margin-bottom: 200px;
@@ -541,6 +533,11 @@ hr, .separator {
 		overflow: auto;
 		position: relative;
 		width: 315px;
+	}
+
+	.portlet #article-portlet {
+		margin-left: -10px;
+		margin-top: -20px;
 	}
 }
 
@@ -619,7 +616,6 @@ hr, .separator {
 }
 
 .lfr-portlet-title-editable-content {
-
 	.aui-field {
 		display: inline;
 		float: none;
@@ -649,7 +645,6 @@ hr, .separator {
 }
 
 .aui-combobox {
-
 	.aui-field-input {
 		font-size: 11px;
 		height: 15px;

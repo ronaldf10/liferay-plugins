@@ -1,0 +1,90 @@
+@import "compass/css3";
+
+@import "compass/utilities";
+
+/*-------------------BREADCRUMBS-------------------*/
+
+.breadcrumbs-horizontal {
+	margin-bottom: 1.5em;
+
+	.last {
+		margin-top: 0.2em;
+	}
+
+	li {
+		background: url(@theme_image_path@/arrows/05_right.png) no-repeat 100% 50%;
+		margin-right: 5px;
+		max-width: 50%;
+		padding-right: 15px;
+	}
+}
+
+.breadcrumbs {
+	a {
+		display: block;
+	}
+
+	li {
+		background: url(@theme_image_path@/arrows/07_down.png) no-repeat 50% 100%;
+		padding: 0 0 9px;
+		max-width: auto;
+	}
+
+	.last {
+		background-image: none;
+	}
+}
+
+.breadcrumbs-vertical {
+	a {
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.last {
+		font-weight: bold;
+
+		a {
+			color: #555;
+		}
+	}
+}
+
+.aui-tree-node-selected {
+	a {
+		color: #555;
+	}
+}
+
+/*-------------------HIDDEN ACCESSIBLE-------------------*/
+
+#banner h2, #banner h3, #navigation h1, .site-breadcrumbs h1, #skip-to-content {
+	clip: rect(0 0 0 0);
+	position: absolute;
+}
+
+.opens-new-window-accessible {
+	background: url(@theme_image_path@/common/open_window.png) no-repeat 0 50%;
+	display: inline-block;
+	font-size: 0;
+	height: 11px;
+	margin-left: 2px;
+	overflow: hidden;
+	text-indent: -9999px;
+	vertical-align: top;
+	width: 11px;
+}
+
+/*-------------------EXTRAS-------------------*/
+
+.lfr-title-scope-selector {
+	@include border-bottom-left-radius: 4px;
+}
+
+.lfr-title-scope-selector {
+	@include border-bottom-right-radius: 4px;
+}
+
+.aui-form-validator-message, .logo .current-site, #navigation, #navigation a, .portlet, .portlet-topper, .site-breadcrumbs ul {
+	@include border-radius: 4px;
+}

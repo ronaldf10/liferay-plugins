@@ -28,9 +28,10 @@ $theme.include($body_top_include)
 				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
 					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
 				</a>
-					<form method="get" action="/search" id="search">
-						<input name="q" type="text" size="40" placeholder="Search..." />
-					</form>
+
+				<form method="get" action="/search" id="search">
+					<input name="q" placeholder="Search..." size="40" type="text" />
+				</form>
 
 				#if ($show_site_name)
 					<span class="site-name" title="#language("go-to") $site_name">

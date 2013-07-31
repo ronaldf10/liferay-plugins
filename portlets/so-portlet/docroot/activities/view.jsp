@@ -30,3 +30,15 @@ SearchContainer searchContainer = new SearchContainer(renderRequest, null, null,
 %>
 
 <%@ include file="/activities/view_activity_sets.jspf" %>
+
+<aui:script use="aui-base">
+	var announcementEntries = A.one('#p_p_id<portlet:namespace />');
+
+	announcementEntries.delegate(
+		'click',
+		function(event) {
+			Liferay.SO.Activities.toggleEntry(event,'<portlet:namespace />');
+		},
+		'.toggle-entry'
+	);
+</aui:script>

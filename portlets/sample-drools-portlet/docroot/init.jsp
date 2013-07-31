@@ -24,13 +24,14 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-<%@ page import="com.liferay.portal.kernel.bi.rules.Fact" %><%@
+<%@ page import="com.liferay.compat.portal.kernel.util.ArrayUtil" %><%@
+page import="com.liferay.compat.portal.util.PortalUtil" %><%@
+page import="com.liferay.portal.kernel.bi.rules.Fact" %><%@
 page import="com.liferay.portal.kernel.bi.rules.Query" %><%@
 page import="com.liferay.portal.kernel.bi.rules.RulesEngineUtil" %><%@
 page import="com.liferay.portal.kernel.bi.rules.RulesLanguage" %><%@
 page import="com.liferay.portal.kernel.bi.rules.RulesResourceRetriever" %><%@
 page import="com.liferay.portal.kernel.resource.StringResourceRetriever" %><%@
-page import="com.liferay.portal.kernel.util.ArrayUtil" %><%@
 page import="com.liferay.portal.kernel.util.Constants" %><%@
 page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
 page import="com.liferay.portal.kernel.util.KeyValuePair" %><%@
@@ -46,7 +47,6 @@ page import="com.liferay.portal.kernel.util.WebKeys" %><%@
 page import="com.liferay.portal.model.Portlet" %><%@
 page import="com.liferay.portal.model.User" %><%@
 page import="com.liferay.portal.service.PortletLocalServiceUtil" %><%@
-page import="com.liferay.portal.util.PortalUtil" %><%@
 page import="com.liferay.portlet.PortletPreferencesFactoryUtil" %><%@
 page import="com.liferay.portlet.asset.AssetRendererFactoryRegistryUtil" %><%@
 page import="com.liferay.portlet.asset.model.AssetEntry" %><%@
@@ -75,8 +75,6 @@ if (Validator.isNotNull(portletResource)) {
 	Portlet selPortlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), portletResource);
 
 	instanceId = selPortlet.getInstanceId();
-
-	preferences = PortletPreferencesFactoryUtil.getPortletSetup(request, portletResource);
 }
 
 String domainName = preferences.getValue("domain-name", "Personalized Content ".concat(instanceId));

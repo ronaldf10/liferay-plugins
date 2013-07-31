@@ -14,9 +14,9 @@
 
 package com.liferay.googlemaps.action;
 
-import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
+import com.liferay.compat.portal.kernel.portlet.DefaultConfigurationAction;
+import com.liferay.compat.portal.util.PortalUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.util.PortalUtil;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;

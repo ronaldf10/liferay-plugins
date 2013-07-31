@@ -25,7 +25,9 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-<%@ page import="com.liferay.knowledgebase.KBArticleContentException" %><%@
+<%@ page import="com.liferay.compat.portal.kernel.util.ArrayUtil" %><%@
+page import="com.liferay.compat.portal.util.PortalUtil" %><%@
+page import="com.liferay.knowledgebase.KBArticleContentException" %><%@
 page import="com.liferay.knowledgebase.KBArticlePriorityException" %><%@
 page import="com.liferay.knowledgebase.KBArticleTitleException" %><%@
 page import="com.liferay.knowledgebase.KBCommentContentException" %><%@
@@ -64,13 +66,13 @@ page import="com.liferay.portal.kernel.dao.search.RowChecker" %><%@
 page import="com.liferay.portal.kernel.language.LanguageUtil" %><%@
 page import="com.liferay.portal.kernel.language.UnicodeLanguageUtil" %><%@
 page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %><%@
+page import="com.liferay.portal.kernel.search.Document" %><%@
 page import="com.liferay.portal.kernel.search.Field" %><%@
 page import="com.liferay.portal.kernel.search.Hits" %><%@
 page import="com.liferay.portal.kernel.search.Indexer" %><%@
 page import="com.liferay.portal.kernel.search.IndexerRegistryUtil" %><%@
 page import="com.liferay.portal.kernel.search.SearchContext" %><%@
 page import="com.liferay.portal.kernel.search.SearchContextFactory" %><%@
-page import="com.liferay.portal.kernel.util.ArrayUtil" %><%@
 page import="com.liferay.portal.kernel.util.Constants" %><%@
 page import="com.liferay.portal.kernel.util.ContentTypes" %><%@
 page import="com.liferay.portal.kernel.util.FastDateFormatConstants" %><%@
@@ -100,7 +102,6 @@ page import="com.liferay.portal.service.SubscriptionLocalServiceUtil" %><%@
 page import="com.liferay.portal.service.WorkflowDefinitionLinkLocalServiceUtil" %><%@
 page import="com.liferay.portal.service.permission.GroupPermissionUtil" %><%@
 page import="com.liferay.portal.service.permission.PortletPermissionUtil" %><%@
-page import="com.liferay.portal.util.PortalUtil" %><%@
 page import="com.liferay.portlet.PortletPreferencesFactoryUtil" %><%@
 page import="com.liferay.portlet.asset.AssetRendererFactoryRegistryUtil" %><%@
 page import="com.liferay.portlet.asset.model.AssetCategory" %><%@

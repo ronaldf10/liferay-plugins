@@ -14,6 +14,7 @@
 
 package com.liferay.so.activities.model;
 
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
 import java.util.HashMap;
@@ -54,6 +55,7 @@ public class SocialActivitySetWrapper implements SocialActivitySet,
 		attributes.put("classNameId", getClassNameId());
 		attributes.put("classPK", getClassPK());
 		attributes.put("type", getType());
+		attributes.put("extraData", getExtraData());
 		attributes.put("activityCount", getActivityCount());
 
 		return attributes;
@@ -112,6 +114,12 @@ public class SocialActivitySetWrapper implements SocialActivitySet,
 
 		if (type != null) {
 			setType(type);
+		}
+
+		String extraData = (String)attributes.get("extraData");
+
+		if (extraData != null) {
+			setExtraData(extraData);
 		}
 
 		Integer activityCount = (Integer)attributes.get("activityCount");
@@ -335,6 +343,24 @@ public class SocialActivitySetWrapper implements SocialActivitySet,
 	}
 
 	/**
+	* Returns the extra data of this social activity set.
+	*
+	* @return the extra data of this social activity set
+	*/
+	public java.lang.String getExtraData() {
+		return _socialActivitySet.getExtraData();
+	}
+
+	/**
+	* Sets the extra data of this social activity set.
+	*
+	* @param extraData the extra data of this social activity set
+	*/
+	public void setExtraData(java.lang.String extraData) {
+		_socialActivitySet.setExtraData(extraData);
+	}
+
+	/**
 	* Returns the activity count of this social activity set.
 	*
 	* @return the activity count of this social activity set
@@ -428,6 +454,26 @@ public class SocialActivitySetWrapper implements SocialActivitySet,
 	public void persist()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_socialActivitySet.persist();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof SocialActivitySetWrapper)) {
+			return false;
+		}
+
+		SocialActivitySetWrapper socialActivitySetWrapper = (SocialActivitySetWrapper)obj;
+
+		if (Validator.equals(_socialActivitySet,
+					socialActivitySetWrapper._socialActivitySet)) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

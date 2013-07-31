@@ -27,7 +27,9 @@
 <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-<%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %><%@
+<%@ page import="com.liferay.compat.portal.kernel.util.Time" %><%@
+page import="com.liferay.compat.portal.util.PortalUtil" %><%@
+page import="com.liferay.portal.kernel.language.LanguageUtil" %><%@
 page import="com.liferay.portal.kernel.portlet.LiferayPortletURL" %><%@
 page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %><%@
 page import="com.liferay.portal.kernel.util.CalendarFactoryUtil" %><%@
@@ -42,13 +44,11 @@ page import="com.liferay.portal.kernel.util.PrefsPropsUtil" %><%@
 page import="com.liferay.portal.kernel.util.PropsKeys" %><%@
 page import="com.liferay.portal.kernel.util.StringPool" %><%@
 page import="com.liferay.portal.kernel.util.StringUtil" %><%@
-page import="com.liferay.portal.kernel.util.Time" %><%@
 page import="com.liferay.portal.kernel.util.Validator" %><%@
 page import="com.liferay.portal.model.Group" %><%@
 page import="com.liferay.portal.model.GroupConstants" %><%@
 page import="com.liferay.portal.model.LayoutConstants" %><%@
 page import="com.liferay.portal.service.GroupLocalServiceUtil" %><%@
-page import="com.liferay.portal.util.PortalUtil" %><%@
 page import="com.liferay.portal.util.PortletKeys" %><%@
 page import="com.liferay.portlet.PortletPreferencesFactoryUtil" %><%@
 page import="com.liferay.portlet.PortletURLFactoryUtil" %><%@
@@ -79,10 +79,6 @@ page import="javax.portlet.PortletRequest" %>
 PortletPreferences preferences = renderRequest.getPreferences();
 
 String portletResource = ParamUtil.getString(request, "portletResource");
-
-if (Validator.isNotNull(portletResource)) {
-	preferences = PortletPreferencesFactoryUtil.getPortletSetup(request, portletResource);
-}
 
 int eventsPerPage = PrefsParamUtil.getInteger(preferences, request, "eventsPerPage", 10);
 int maxDaysDisplayed = PrefsParamUtil.getInteger(preferences, request, "maxDaysDisplayed", 1);

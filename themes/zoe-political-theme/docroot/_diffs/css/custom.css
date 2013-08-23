@@ -132,6 +132,8 @@
 		}
 	}
 
+	/* -------- Navigation -------- */
+
 	#navigation {
 		ul {
 			display: block;
@@ -170,6 +172,9 @@
 		}
 	}
 
+
+	/* -------- Content -------- */
+
 	#content #main-content {
 		background: #FFF;
 		margin: 0 auto;
@@ -198,6 +203,8 @@
 			}
 		}
 	}
+
+	/* -------- Color Scheme-------- */
 
 	@each $color-scheme in democrat, republican, independent {
 		body.#{$color-scheme} {
@@ -286,5 +293,15 @@
 
 	#content #main-content {
 		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px 15px);
+	}
+
+	.modify-pages .delete-tab {
+		@include border-radius(50%);
+		@include text-shadow(none);
+		@include transition(opacity 0.2s ease);
+
+		&:hover {
+			@include box-shadow(0 1px 1px -1px #000);
+		}
 	}
 }

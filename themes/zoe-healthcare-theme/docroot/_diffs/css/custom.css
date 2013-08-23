@@ -1,11 +1,7 @@
 @import "compass";
 @import "mixins";
 
-$dockbarGradientEnd: #1273C7;
-$dockbarGradientStart: #118ADE;
-
-$dockbarOpenGradientEnd: #0993DD;
-$dockbarOpenGradientStart: #0EA6F9;
+@import url(custom_common.css);
 
 /* -------- Global -------- */
 
